@@ -1,0 +1,78 @@
+
+  <div class="panel panel-default" ng-controller="ResultsController as resultsPanel">
+    <div class="panel-heading"><h4>Results</h4></div> 
+    <div class="panel-body">
+      <div class="results-container">
+        <div data-bind="css:savingsEnough" class="alert">Savings required: 
+          <span data-bind="visible: savingsRequired ">
+            <span>£</span><span data-bind="text:savingsRequired"></span>
+            <small>(You have £<span data-bind="text:currentSavings"></span> available)</small>
+            <span data-toggle="popover" data-placement="bottom" data-container="body" data-content="This is stamp duty plus moving costs plus a ten percent deposit. The larger your deposit the higher this figure will be. "><span class="glyphicon glyphicon-info-sign"></span></span>
+          </span>
+        </div>
+        <div data-bind="css:salaryEnough" class="alert">Multiple of income (salary): 
+          <span data-bind="visible: multipleOfSalary ">
+            <span data-bind="text:multipleOfSalary"></span><span>x</span>
+            <span data-toggle="popover" data-placement="top" data-container="body" data-content="If this is more than 4.5x your total yearly salary, it can get more difficult to find a mortgage. It is also important to bear in mind that other factors like debts and other monthly costs will play a factor in the multiple a bank will lend."><span class="glyphicon glyphicon-info-sign"></span></span>
+          </span>
+        </div>
+        <div data-bind="css:netIncomeEnough" class="alert">percentage of net income:
+          <span data-bind="visible: multipleOfNetIncome ">
+            <span data-bind="text:multipleOfNetIncome"></span><span>%</span> 
+            <span data-bind="visible: amountLeftMonthly ">
+            <small>(Amount leftover each month: £<span data-bind="text:amountLeftMonthly"></span>)</small>
+            <span data-toggle="popover" data-placement="top" data-container="body" data-content="If this is more than 40-43% of your net montly income, you may find it more difficult to get a mortgage. This will show as red above 43%"><span class="glyphicon glyphicon-info-sign"></span></span>
+          </span>
+        </div>   
+      </div>
+      <hr>
+      <h4>Monthly costs</h4>
+      <div>Mortgage:
+        <span data-bind="visible:monthlyMortgage ">
+          <span>£</span><span data-bind="text:monthlyMortgage"></span>
+          <span data-toggle="popover" data-placement="top" data-container="body" data-content="This really is only an estimate. Of all the figures on here, this is the least accurate and the mortgage you actually pay will almost certainly be different."><span class="glyphicon glyphicon-info-sign"></span></span>
+        </span>
+      </div>
+      <div>Service charge: 
+        <span data-bind="visible:serviceCharge ">
+          <span>£</span><span data-bind="text:serviceCharge"></span>
+        </span>
+      </div>
+      <div>Rent: 
+        <span data-bind="visible:monthlyRent ">
+          <span>£</span><span data-bind="text:monthlyRent"></span>
+        </span>
+      </div>
+      <div><strong>Total:
+        <span data-bind="visible:totalMonthly ">
+          <span>£</span><span data-bind="text:totalMonthly"></span>
+        </span></strong>
+      </div>
+      <hr>
+      <h4>Other Information</h4>
+      <div>Amount borrowing:
+        <span data-bind="visible:amountBorrowing ">
+          <span>£</span><span data-bind="text:amountBorrowing"></span>
+          <span data-toggle="popover" data-placement="top" data-container="body" data-content="This is the percentage being bought - deposit."><span class="glyphicon glyphicon-info-sign"></span></span>
+        </span>
+      </div>
+      <div>Deposit value:
+        <span data-bind="visible:depositValue ">
+          <span>£</span><span data-bind="text:depositValue"></span>
+          <span data-toggle="popover" data-placement="top" data-container="body" data-content="This is the value of the deposit at the percentage you selected."><span class="glyphicon glyphicon-info-sign"></span></span>
+        </span>
+      </div>
+      <div>Total monthly net income:
+        <span data-bind="visible:netMonthly ">
+          <span>£</span><span data-bind="text:netMonthly"></span>
+          <span data-toggle="popover" data-placement="top" data-container="body" data-content="This is calculated based on the yearly income figures provided and whether they are based on self-employed status or not. It is gross income - income tax - national insurance. It does not take into account deductions related to pensions, or anything else and assumes you are under 65 and over 21. Like all the figures here this is a only a guide. Calculations are based on figures from hmrc website for the tax year 2015/2016"><span class="glyphicon glyphicon-info-sign"></span></span>
+        </span>
+      </div>
+      <div>Stamp duty to pay:
+        <span data-bind="visible:stampDuty ">
+          <span>£</span><span data-bind="text:stampDuty"></span>
+          <span data-toggle="popover" data-placement="top" data-container="body" data-content="Stamp duty brackets and percentages are taken from hmrc website for the tax year 2015/2016."><span class="glyphicon glyphicon-info-sign"></span></span>
+        </span>
+      </div>
+    </div>
+  </div>

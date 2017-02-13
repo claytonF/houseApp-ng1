@@ -1,0 +1,5 @@
+<div class="input-group">
+  <div class="input-group-addon">{{fieldType}}</div>
+  <input id="{{inputId}}" type="number" min="{{min}}" max="{{max}}" step="{{step}}" class="form-control" ng-model="entryInput" ng-change="entryValue()">
+  <div class="input-group-addon clear" data-ng-click="inputPanel.clearInput($event)"><span aria-hidden="true">&times;</span></div>
+</div>

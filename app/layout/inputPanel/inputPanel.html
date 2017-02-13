@@ -1,0 +1,90 @@
+
+  <div role="tab-panel" ng-controller="InputController as inputPanel">
+    <ul class="nav nav-tabs" role="tablist" id="details-tabs">
+      <li role="presentation" class="active"><a href="#aboutYou" aria-controls="home" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-user"></span> Variable</a></li>
+      <li role="presentation"><a href="#propertyDetails" aria-controls="home" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-home"></span> Fixed</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="aboutYou">
+          <form role="form" data-toggle="validator">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="form-group">
+                <label for="share">% purchasing</label>
+                <span data-toggle="popover" data-placement="top" data-container="body" data-content="If buying on the open market, put 100, if buying through shared ownership put the percentage you want to purchase (will be between 25% and 75% when you first buy."><span class="glyphicon glyphicon-info-sign"></span></span>
+                <entry ng-controller="share"></entry>
+              </div>
+              <div class="form-group">
+                <label for="depositPercentage">Deposit %</label>
+                <span data-toggle="popover" data-placement="top" data-container="body" data-content="Put the deposit percentage you want to achieve and the app will tell you if this is possible based on your total savings against moving costs, stamp duty etc."><span class="glyphicon glyphicon-info-sign"></span></span>
+                <entry ng-controller="depositPercentage"></entry>
+              </div>
+              <div class="form-group">
+                <label for="repaymentTerm">Mortgage repayment term (years)</label>
+                <entry ng-controller="repaymentTerm"></entry>
+              </div>
+              <div class="form-group">
+                <label for="interestRate">Mortgage Interest rate (%)</label>
+                <entry ng-controller="interestRate"></entry>
+              </div>                  
+            </div>
+          </div>
+        </form>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="propertyDetails">
+          <form role="form" data-toggle="validator">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="form-group">
+                <label for="marketValue">Full market value</label>
+                <entry ng-controller="marketValue"></entry>
+              </div>
+              <div class="form-group">
+                <label for="currentSavings">Total cash available for purchase</label>
+                <span data-toggle="popover" data-placement="bottom" data-container="body" data-content="This will have to cover stamp duty, moving costs, and deposit."><span class="glyphicon glyphicon-info-sign"></span></span>
+                <entry ng-controller="currentSavings"></entry>
+              </div>
+              <p><strong>Annual income</strong> <span data-toggle="popover" data-placement="bottom" data-container="body" data-content="If you are PAYE, use your gross income, before deductions. If you are self employed, use your net income after deductions as this is what all tax and NI will be based on. The calculation will use class 2 and 4 national insurance."><span class="glyphicon glyphicon-info-sign"></span></span></p>
+              <div class="form-inline form-group">
+                <div class="form-group">
+                  <label for="income1">Person 1</label>
+                  <entry ng-controller="income1"></entry>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="selfEmployed1" data-bind="checked:selfEmployed1"> Self employed
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-inline form-group">
+                <div class="form-group">
+                  <label for="income2">Person 2</label>
+                  <entry ng-controller="income2"></entry>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="selfEmployed2" data-bind="checked:selfEmployed2"> Self employed
+                    </label>
+                  </div>
+                </div>                    
+              </div>          
+              <div class="form-group">
+                <label for="movingCosts">Estimated moving costs </label>
+                <span data-toggle="popover" data-placement="top" data-container="body" data-content="This will include solicitors fees, various registry searches, mortgage broker, mortgage arrangement fee, moving costs, furniture. Basically estimate (generously) how much cash you will need to complete the move. We think £8000 is probably a good starting point, but it could be more!"><span class="glyphicon glyphicon-info-sign"></span></span>
+                <entry ng-controller="movingCosts"></entry>
+              </div> 
+                <div class="form-group">
+                  <label for="serviceCharge">Monthly service charge (apartments)</label>
+                  <entry ng-controller="serviceCharge"></entry>
+                </div> 
+                
+                <div class="form-group">
+                  <label for="rentPercentage">Rent percentage (shared ownership)</label>
+                  <span data-toggle="popover" data-placement="top" data-container="body" data-content="This is usually stated on the price list that the housing association provide. It is usually something between one and three percent."><span class="glyphicon glyphicon-info-sign"></span></span>
+                  <entry ng-controller="rentPercentage"></entry>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>
